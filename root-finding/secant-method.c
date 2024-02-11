@@ -18,7 +18,7 @@ double secantMethod(double x0, double x1, double tol, int maxIterations, double 
         x2 = x1 - fx1 * (x1 - x0) / (fx1 - fx0);
 
         if (fabs(x2 - x1) < tol) {
-            printf("Approximated root: %f\n", x2);
+            printf("The root is approximately %.5f found in %d steps.\n", x2, iteration);
             return x2;
         }
 

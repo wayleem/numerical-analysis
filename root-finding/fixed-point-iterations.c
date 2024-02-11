@@ -10,7 +10,7 @@ double fixedPointIteration(double x0, double tol, int maxIterations, double (*f)
         x1 = (*f)(x0); 
 
         if (fabs(x1 - x0) < tol) {
-            printf("Convergence reached (%d iterations)\n", iteration);
+            printf("The root is approximately %.5f found in %d steps.\n", x1, iteration);
             return x1;
         }
 
@@ -28,6 +28,5 @@ int main() {
     int maxIterations = 100;
     double root = fixedPointIteration(initialGuess, tolerance, maxIterations, g);
 
-    printf("Approximated root: %f\n", root);
     return 0;
 }
