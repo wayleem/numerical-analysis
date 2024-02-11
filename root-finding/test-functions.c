@@ -10,5 +10,5 @@ double f_prime(double x) {
 }
 
 double g(double x) {
-  return sqrt(1 + 2 / x);
+  return (exp(-x * x) + 2 * pow(x, 3)) / (1 + 3 * pow(x, 2));
 }

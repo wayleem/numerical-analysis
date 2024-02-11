@@ -23,7 +23,7 @@ double fixedPointIteration(double x0, double tol, int maxIterations, double (*f)
 }
 
 int main() {
-    double initialGuess = 0.6; 
+    double initialGuess = 0.5; 
     double tolerance = 0.0001;
     int maxIterations = 100;
     double root = fixedPointIteration(initialGuess, tolerance, maxIterations, g);
