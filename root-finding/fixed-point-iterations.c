@@ -5,12 +5,14 @@
 double fixedPointIteration(double x0, double tol, int maxIterations, double (*f)(double)) {
     double x1;
     int iteration = 0;
+    int flops = 0; 
 
     while (iteration < maxIterations) {
         x1 = (*f)(x0); 
+        flops += 18; // 1x g(x)
 
         if (fabs(x1 - x0) < tol) {
-            printf("The root is approximately %.5f found in %d steps.\n", x1, iteration);
+            printf("The root is approximately %.5f found in %d steps. (flops: %d)\n", x1, iteration, flops);
             return x1;
         }
 
@@ -18,7 +20,7 @@ double fixedPointIteration(double x0, double tol, int maxIterations, double (*f)
         iteration++;
     }
 
-    printf("Maximum iterations reached (Last approximation: %f)\n", x1);
+    printf("Maximum iterations reached (Last approximation: %f) (flops: %d)\n", x1, flops);
     return x1;
 }
 
